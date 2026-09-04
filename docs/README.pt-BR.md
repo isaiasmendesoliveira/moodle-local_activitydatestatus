@@ -1,10 +1,10 @@
 # Activity Date Status
 
 <p align="center">
-  <img src="docs/images/activity-date-status-logo.png" alt="Activity Date Status logo" width="260">
+  <img src="../docs/images/activity-date-status-logo.png" alt="Activity Date Status logo" width="260">
 </p>
 
-**Activity Date Status** (`local_activitydatestatus`) é um plugin local para Moodle que transforma as datas nativas das atividades em informações mais claras de data exata e status relativo na página do curso, sem alterar regras de acesso, prazos ou sobreposições definidas pelo Moodle.
+**Activity Date Status** (`local_activitydatestatus`) é um plugin local para Moodle que transforma as datas nativas das atividades em informações mais claras de data exata e de status relativo na página do curso, sem alterar regras de acesso, prazos ou sobreposições definidas pelo Moodle.
 
 > **Versão pública:** 1.0.0  
 > **Moodle:** 4.5–5.2  
@@ -25,8 +25,8 @@
 - Padrões administrativos que podem ser sobrescritos pelo professor em cada atividade.
 - Estados semânticos nativos do Bootstrap 5: `info`, `success`, `warning`, `danger` e `secondary`.
 - Datas específicas do usuário obtidas diretamente da API nativa do Moodle.
-- Comportamento seguro: as datas nativas do Moodle só são ocultadas depois que o conteúdo do plugin é renderizado com sucesso.
-- Sem serviços externos e sem dependências adicionais.
+- Comportamento seguro: as datas nativas do Moodle só são ocultadas após o conteúdo do plugin ser renderizado com sucesso.
+- Sem serviços externos nem dependências adicionais.
 
 ## Como funciona
 
@@ -36,7 +36,7 @@ O plugin utiliza:
 \core\activity_dates::get_dates_for_module($cm, $userid);
 ```
 
-O Moodle continua sendo a única fonte das datas. O plugin armazena apenas preferências de apresentação por atividade e não duplica datas de abertura, fechamento, entrega ou regras de acesso.
+O Moodle continua sendo a única fonte de dados. O plugin armazena apenas as preferências de apresentação por atividade e não duplica as datas de abertura, fechamento, entrega ou as regras de acesso.
 
 ## Configuração pelo professor
 
@@ -65,11 +65,11 @@ Esses valores são apenas padrões. O professor mantém o controle em cada ativi
 
 - A cor nunca é a única forma de comunicar o estado.
 - Os ícones são decorativos para tecnologias assistivas.
-- O plugin herda tipografia e estrutura visual do tema Moodle.
+- O plugin herda a tipografia e a estrutura visual do tema Moodle.
 - Utiliza classes semânticas do Bootstrap 5.
 
 ## Privacidade
 
-O plugin não armazena dados pessoais. São armazenadas apenas configurações de apresentação vinculadas ao módulo da atividade.
+O plugin não armazena dados pessoais. São armazenadas apenas as configurações de apresentação vinculadas ao módulo da atividade.
 
 [Voltar para README em inglês](../README.md)
