@@ -1,0 +1,55 @@
+name: Bug report
+description: Report a reproducible problem in Activity Date Status
+title: "[Bug] "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for helping improve Activity Date Status. Please do not include personal student data.
+  - type: input
+    id: moodle
+    attributes:
+      label: Moodle version
+      placeholder: e.g. 4.5.6 or 5.2.1
+    validations:
+      required: true
+  - type: input
+    id: plugin
+    attributes:
+      label: Plugin version
+      placeholder: e.g. 1.0.0
+    validations:
+      required: true
+  - type: dropdown
+    id: mode
+    attributes:
+      label: Display mode
+      options:
+        - Dates only
+        - Status only
+        - Dates + status
+        - Not applicable
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Provide minimal reproducible steps.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behaviour
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behaviour
+    validations:
+      required: true
+  - type: textarea
+    id: debug
+    attributes:
+      label: Debug information
+      description: Include relevant Moodle developer-debugging output after removing private data.
