@@ -36,7 +36,7 @@ Moodle already provides activity dates. Activity Date Status does not replace Mo
   - `danger` — critical proximity or closed state;
   - `secondary` — neutral/unclassified date semantics.
 - User-specific dates are obtained from Moodle core.
-- Fail-safe behaviour: Moodle's native date block is hidden only after plugin content has been rendered successfully.
+- Fail-safe behavior: Moodle's native date block is hidden only after plugin content has been rendered successfully.
 - No external services or runtime dependencies.
 
 ## How it works
@@ -86,15 +86,15 @@ Then visit **Site administration → Notifications**.
 
 ## Compatibility
 
-The public 1.0.0 release declares support for Moodle **4.5 through 5.2**. GitHub Actions is configured to validate supported branches with Moodle Plugin CI.
+The public 1.0.0 release supports Moodle **4.5 through 5.2**. GitHub Actions validates supported branches with Moodle Plugin CI.
 
 The plugin works with activities and resources that expose dates through Moodle's `core\\activity_dates` API. If a module does not expose activity dates, the plugin displays nothing for that module.
 
 ## Accessibility
 
-- Status is always communicated with text, not colour alone.
+- Status is always communicated with text, not color alone.
 - Icons are decorative and hidden from assistive technologies.
-- Bootstrap semantic colours are used consistently.
+- Bootstrap semantic colors are used consistently.
 - Moodle/theme typography is inherited rather than replaced.
 
 ## Privacy
