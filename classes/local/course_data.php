@@ -138,7 +138,7 @@ final class course_data {
         $criticalhours = max(0, min(8760, (int) ($record->criticalhours ?? 12)));
         if ($warninghours === 0) {
             $criticalhours = 0;
-        } elseif ($criticalhours > $warninghours) {
+        } else if ($criticalhours > $warninghours) {
             $criticalhours = $warninghours;
         }
 

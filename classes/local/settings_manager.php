@@ -106,7 +106,7 @@ final class settings_manager {
         $criticalhours = self::normalise_hours($criticalhours);
         if ($warninghours === 0) {
             $criticalhours = 0;
-        } elseif ($criticalhours > $warninghours) {
+        } else if ($criticalhours > $warninghours) {
             $criticalhours = $warninghours;
         }
 
@@ -165,7 +165,7 @@ final class settings_manager {
         $criticalhours = self::normalise_hours((int) ($settings->criticalhours ?? 12));
         if ($warninghours === 0) {
             $criticalhours = 0;
-        } elseif ($criticalhours > $warninghours) {
+        } else if ($criticalhours > $warninghours) {
             $criticalhours = $warninghours;
         }
 

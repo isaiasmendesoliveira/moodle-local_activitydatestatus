@@ -4,6 +4,12 @@
 
 Initial public release of **Activity Date Status**.
 
+CI packaging refinements for the 1.0.0 release candidate:
+
+- Aligns conditional syntax with Moodle CodeSniffer (`else if`).
+- Removes an unnecessary `MOODLE_INTERNAL` guard from `lib.php`.
+- Ensures the first public-release package does not include a legacy `db/upgrade.php`.
+
 - Uses Moodle's native `core\\activity_dates` API as the source of activity dates.
 - Adds per-activity teacher controls for Dates only, Status only, or Dates + status.
 - Adds Bootstrap 5 badge and coloured-text status presentations.
