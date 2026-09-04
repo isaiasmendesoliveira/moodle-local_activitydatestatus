@@ -6,6 +6,8 @@ Initial public release of **Activity Date Status**.
 
 CI packaging refinements for the 1.0.0 release candidate:
 
+- Fixes Moodle Grunt linting for JavaScript line length and CSS `!important` usage.
+- Relies on Bootstrap 5 flex and semantic colour utilities for status layout and colours.
 - Aligns conditional syntax with Moodle CodeSniffer (`else if`).
 - Removes an unnecessary `MOODLE_INTERNAL` guard from `lib.php`.
 - Ensures the first public-release package does not include a legacy `db/upgrade.php`.

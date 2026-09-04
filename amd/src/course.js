@@ -273,7 +273,11 @@ const buildStatus = (item, now, formatter) => {
     row.setAttribute('aria-live', 'polite');
 
     const status = document.createElement('span');
-    status.className = `local-activitydatestatus__status local-activitydatestatus__status--${style} local-activitydatestatus__status--${state}`;
+    status.className = [
+        'local-activitydatestatus__status',
+        `local-activitydatestatus__status--${style}`,
+        `local-activitydatestatus__status--${state}`,
+    ].join(' ');
     const classes = style === 'badge'
         ? (STATE_BADGE_CLASSES[state] || STATE_BADGE_CLASSES.neutral)
         : (STATE_TEXT_CLASSES[state] || STATE_TEXT_CLASSES.neutral);

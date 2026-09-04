@@ -30,6 +30,8 @@ final class date_classifier_test extends \advanced_testcase {
     /**
      * Test semantic classification of activity date identifiers.
      *
+     * @param string $dataid Activity date identifier to classify.
+     * @param string $expected Expected semantic classification.
      * @dataProvider classification_provider
      */
     public function test_classify(string $dataid, string $expected): void {

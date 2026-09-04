@@ -44,27 +44,16 @@
 }
 
 .local-activitydatestatus__status {
-    /* Bootstrap utilities are also added in JS. !important protects the horizontal
-       layout from theme/bootstrap .badge rules with the same specificity. */
-    display: inline-flex !important;
-    flex-direction: row !important;
-    flex-wrap: nowrap !important;
-    align-items: center !important;
-    gap: 0 !important;
+    /* Bootstrap flex utilities are added in JavaScript for horizontal alignment. */
     max-width: 100%;
     font-weight: 500;
     vertical-align: middle;
-}
-
-.local-activitydatestatus__status--text {
-    align-items: center !important;
 }
 
 .local-activitydatestatus__status--badge {
     white-space: nowrap;
     text-align: left;
     line-height: 1.35;
-    align-items: center !important;
     padding: .5em .8em;
 }
 
@@ -73,7 +62,6 @@
     width: 1rem;
     height: 1rem;
     flex: 0 0 1rem;
-    align-self: center !important;
     fill: none;
     stroke: currentColor;
     stroke-width: 2;
@@ -113,25 +101,6 @@
 }
 
 /*
- * Text style uses standard Bootstrap 5 semantic text utilities. Fallbacks use
- * the default BS5 palette. SVG icons inherit currentColor.
+ * Text style uses the standard Bootstrap 5 semantic text utility classes added
+ * in JavaScript. SVG icons inherit the utility's currentColor.
  */
-.local-activitydatestatus__status--text.text-info {
-    color: var(--bs-info, #0dcaf0) !important;
-}
-
-.local-activitydatestatus__status--text.text-success {
-    color: var(--bs-success, #198754) !important;
-}
-
-.local-activitydatestatus__status--text.text-warning {
-    color: var(--bs-warning, #ffc107) !important;
-}
-
-.local-activitydatestatus__status--text.text-danger {
-    color: var(--bs-danger, #dc3545) !important;
-}
-
-.local-activitydatestatus__status--text.text-secondary {
-    color: var(--bs-secondary, #6c757d) !important;
-}
