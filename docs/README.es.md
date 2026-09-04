@@ -1,7 +1,7 @@
 # Activity Date Status
 <p align="center">
   <img
-    src="docs/images/activity-date-status-logo.png"
+    src="../docs/images/activity-date-status-logo.png"
     alt="Activity Date Status"
     width="320">
 </p>
