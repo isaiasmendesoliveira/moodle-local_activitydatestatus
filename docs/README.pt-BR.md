@@ -1,5 +1,9 @@
 # Activity Date Status
 
+<p align="center">
+  <img src="docs/images/activity-date-status-logo.png" alt="Activity Date Status logo" width="260">
+</p>
+
 **Activity Date Status** (`local_activitydatestatus`) é um plugin local para Moodle que transforma as datas nativas das atividades em informações mais claras de data exata e status relativo na página do curso, sem alterar regras de acesso, prazos ou sobreposições definidas pelo Moodle.
 
 > **Versão pública:** 1.0.0  
