@@ -1,11 +1,8 @@
-# Activity Date Status
-
 <p align="center">
-  <img
-    src="docs/images/activity-date-status-logo.png"
-    alt="Activity Date Status"
-    width="320">
+  <img src="docs/images/activity-date-status-logo.png" alt="Activity Date Status logo" width="260">
 </p>
+
+# Activity Date Status
 
 **Activity Date Status** (`local_activitydatestatus`) is a local plugin for Moodle LMS that turns native activity dates into clearer exact-date and relative-status information on the course page, while leaving scheduling, access rules, and user-specific overrides under Moodle's control.
 
@@ -111,6 +108,8 @@ The GitHub distribution includes:
 - English (`en`);
 - Brazilian Portuguese (`pt_br`);
 - Spanish (`es`).
+
+For Moodle Marketplace submission, see [Marketplace submission notes](docs/MARKETPLACE.md).
 
 ## Development
 

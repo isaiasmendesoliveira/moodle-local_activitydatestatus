@@ -8,11 +8,11 @@
 //
 // Moodle is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 // GNU General Public License for more details.
 //
 // You should have received a copy of the GNU General Public License
-// along with Moodle. If not, see <https://www.gnu.org/licenses/>.
+// along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
 
 /**
  * Site defaults for Activity Date Status.
@@ -50,9 +50,12 @@ if ($hassiteconfig) {
         get_string('defaultdisplaymode_desc', 'local_activitydatestatus'),
         \local_activitydatestatus\local\settings_manager::MODE_BOTH,
         [
-            \local_activitydatestatus\local\settings_manager::MODE_DATES => get_string('displaymode_dates', 'local_activitydatestatus'),
-            \local_activitydatestatus\local\settings_manager::MODE_STATUS => get_string('displaymode_status', 'local_activitydatestatus'),
-            \local_activitydatestatus\local\settings_manager::MODE_BOTH => get_string('displaymode_both', 'local_activitydatestatus'),
+            \local_activitydatestatus\local\settings_manager::MODE_DATES =>
+                get_string('displaymode_dates', 'local_activitydatestatus'),
+            \local_activitydatestatus\local\settings_manager::MODE_STATUS =>
+                get_string('displaymode_status', 'local_activitydatestatus'),
+            \local_activitydatestatus\local\settings_manager::MODE_BOTH =>
+                get_string('displaymode_both', 'local_activitydatestatus'),
         ]
     ));
 
@@ -62,8 +65,10 @@ if ($hassiteconfig) {
         get_string('defaultstatusstyle_desc', 'local_activitydatestatus'),
         \local_activitydatestatus\local\settings_manager::STYLE_BADGE,
         [
-            \local_activitydatestatus\local\settings_manager::STYLE_BADGE => get_string('statusstyle_badge', 'local_activitydatestatus'),
-            \local_activitydatestatus\local\settings_manager::STYLE_TEXT => get_string('statusstyle_text', 'local_activitydatestatus'),
+            \local_activitydatestatus\local\settings_manager::STYLE_BADGE =>
+                get_string('statusstyle_badge', 'local_activitydatestatus'),
+            \local_activitydatestatus\local\settings_manager::STYLE_TEXT =>
+                get_string('statusstyle_text', 'local_activitydatestatus'),
         ]
     ));
 
