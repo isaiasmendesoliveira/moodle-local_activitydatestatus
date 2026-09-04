@@ -1,0 +1,137 @@
+/*
+ * This file is part of Moodle - https://moodle.org/
+ *
+ * Moodle is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * @package    local_activitydatestatus
+ * @copyright  2026 Isaias Mendes de Oliveira
+ * @license    https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+
+/* Activity Date Status follows Moodle activity metadata and avoids card/alert styling. */
+.local-activitydatestatus {
+    grid-column: 1 / -1;
+    max-width: 100%;
+    margin-top: .1875rem;
+    color: inherit;
+    font-size: inherit;
+    line-height: 1.5;
+}
+
+.local-activitydatestatus__dates {
+    color: inherit;
+    font-weight: 400;
+}
+
+.local-activitydatestatus__date + .local-activitydatestatus__date {
+    margin-top: .0625rem;
+}
+
+.local-activitydatestatus__date strong,
+.local-activitydatestatus__text strong {
+    font-weight: 600;
+}
+
+.local-activitydatestatus__statusrow {
+    min-width: 0;
+}
+
+.local-activitydatestatus--mode-both .local-activitydatestatus__statusrow {
+    margin-top: .1875rem;
+}
+
+.local-activitydatestatus__status {
+    /* Bootstrap utilities are also added in JS. !important protects the horizontal
+       layout from theme/bootstrap .badge rules with the same specificity. */
+    display: inline-flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    gap: 0 !important;
+    max-width: 100%;
+    font-weight: 500;
+    vertical-align: middle;
+}
+
+.local-activitydatestatus__status--text {
+    align-items: center !important;
+}
+
+.local-activitydatestatus__status--badge {
+    white-space: nowrap;
+    text-align: left;
+    line-height: 1.35;
+    align-items: center !important;
+    padding: .5em .8em;
+}
+
+.local-activitydatestatus__icon {
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    flex: 0 0 1rem;
+    align-self: center !important;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.local-activitydatestatus__status--badge .local-activitydatestatus__icon {
+    width: 1rem;
+    height: 1rem;
+    flex-basis: 1rem;
+}
+
+.local-activitydatestatus__double-space {
+    display: inline-block;
+    flex: 0 0 auto;
+    white-space: pre;
+    line-height: 1;
+}
+
+.local-activitydatestatus__message {
+    display: inline-block;
+    flex: 0 0 auto;
+    white-space: nowrap;
+    line-height: 1.35;
+    vertical-align: middle;
+}
+
+.local-activitydatestatus__message strong,
+.local-activitydatestatus__value {
+    display: inline;
+    vertical-align: baseline;
+}
+
+.local-activitydatestatus__text {
+    min-width: 0;
+}
+
+/*
+ * Text style uses standard Bootstrap 5 semantic text utilities. Fallbacks use
+ * the default BS5 palette. SVG icons inherit currentColor.
+ */
+.local-activitydatestatus__status--text.text-info {
+    color: var(--bs-info, #0dcaf0) !important;
+}
+
+.local-activitydatestatus__status--text.text-success {
+    color: var(--bs-success, #198754) !important;
+}
+
+.local-activitydatestatus__status--text.text-warning {
+    color: var(--bs-warning, #ffc107) !important;
+}
+
+.local-activitydatestatus__status--text.text-danger {
+    color: var(--bs-danger, #dc3545) !important;
+}
+
+.local-activitydatestatus__status--text.text-secondary {
+    color: var(--bs-secondary, #6c757d) !important;
+}

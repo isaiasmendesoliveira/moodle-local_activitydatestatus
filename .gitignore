@@ -1,0 +1,10 @@
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+/dist/
+/vendor/
+/node_modules/
+.phpunit.result.cache
