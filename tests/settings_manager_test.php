@@ -8,11 +8,11 @@
 //
 // Moodle is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 // GNU General Public License for more details.
 //
 // You should have received a copy of the GNU General Public License
-// along with Moodle. If not, see <https://www.gnu.org/licenses/>.
+// along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
 
 namespace local_activitydatestatus;
 
@@ -24,6 +24,7 @@ use local_activitydatestatus\local\settings_manager;
  * @package    local_activitydatestatus
  * @copyright  2026 Isaias Mendes de Oliveira
  * @license    https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @covers     \local_activitydatestatus\local\settings_manager
  */
 final class settings_manager_test extends \advanced_testcase {
     /**

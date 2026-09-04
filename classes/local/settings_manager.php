@@ -8,11 +8,11 @@
 //
 // Moodle is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 // GNU General Public License for more details.
 //
 // You should have received a copy of the GNU General Public License
-// along with Moodle. If not, see <https://www.gnu.org/licenses/>.
+// along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
 
 namespace local_activitydatestatus\local;
 
@@ -106,7 +106,7 @@ final class settings_manager {
         $criticalhours = self::normalise_hours($criticalhours);
         if ($warninghours === 0) {
             $criticalhours = 0;
-        } else if ($criticalhours > $warninghours) {
+        } elseif ($criticalhours > $warninghours) {
             $criticalhours = $warninghours;
         }
 
@@ -165,7 +165,7 @@ final class settings_manager {
         $criticalhours = self::normalise_hours((int) ($settings->criticalhours ?? 12));
         if ($warninghours === 0) {
             $criticalhours = 0;
-        } else if ($criticalhours > $warninghours) {
+        } elseif ($criticalhours > $warninghours) {
             $criticalhours = $warninghours;
         }
 

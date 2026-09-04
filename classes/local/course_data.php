@@ -8,11 +8,11 @@
 //
 // Moodle is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 // GNU General Public License for more details.
 //
 // You should have received a copy of the GNU General Public License
-// along with Moodle. If not, see <https://www.gnu.org/licenses/>.
+// along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
 
 namespace local_activitydatestatus\local;
 
@@ -104,7 +104,7 @@ final class course_data {
                 continue;
             }
 
-            usort($normalised, static function(array $a, array $b): int {
+            usort($normalised, static function (array $a, array $b): int {
                 $comparison = $a['timestamp'] <=> $b['timestamp'];
                 return $comparison !== 0 ? $comparison : ($a['_position'] <=> $b['_position']);
             });
@@ -138,7 +138,7 @@ final class course_data {
         $criticalhours = max(0, min(8760, (int) ($record->criticalhours ?? 12)));
         if ($warninghours === 0) {
             $criticalhours = 0;
-        } else if ($criticalhours > $warninghours) {
+        } elseif ($criticalhours > $warninghours) {
             $criticalhours = $warninghours;
         }
 
@@ -149,5 +149,4 @@ final class course_data {
             'criticalhours' => $criticalhours,
         ];
     }
-
 }

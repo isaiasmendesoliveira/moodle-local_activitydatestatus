@@ -8,11 +8,11 @@
 //
 // Moodle is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 // GNU General Public License for more details.
 //
 // You should have received a copy of the GNU General Public License
-// along with Moodle. If not, see <https://www.gnu.org/licenses/>.
+// along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
 
 namespace local_activitydatestatus;
 
@@ -28,6 +28,8 @@ use local_activitydatestatus\local\date_classifier;
  */
 final class date_classifier_test extends \advanced_testcase {
     /**
+     * Test semantic classification of activity date identifiers.
+     *
      * @dataProvider classification_provider
      */
     public function test_classify(string $dataid, string $expected): void {

@@ -8,11 +8,11 @@
 //
 // Moodle is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 // GNU General Public License for more details.
 //
 // You should have received a copy of the GNU General Public License
-// along with Moodle. If not, see <https://www.gnu.org/licenses/>.
+// along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
 
 namespace local_activitydatestatus\local;
 
@@ -28,9 +28,16 @@ namespace local_activitydatestatus\local;
  * @license    https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 final class date_classifier {
+    /** Activity opening date. */
     public const OPENING = 'opening';
+
+    /** Soft due date. */
     public const DUE = 'due';
+
+    /** Activity closing or hard deadline date. */
     public const CLOSING = 'closing';
+
+    /** Date with no known semantic classification. */
     public const NEUTRAL = 'neutral';
 
     /**
@@ -55,8 +62,10 @@ final class date_classifier {
             'timeend', 'enddate', 'close', 'closingtime', 'availableto', 'timeavailableto',
             'timeviewto',
         ];
-        if (in_array($id, $closingids, true)
-                || preg_match('/(close|closing|cutoff|deadline|end$|enddate|until|availableto|viewto)/', $id)) {
+        if (
+            in_array($id, $closingids, true)
+            || preg_match('/(close|closing|cutoff|deadline|end$|enddate|until|availableto|viewto)/', $id)
+        ) {
             return self::CLOSING;
         }
 
@@ -65,8 +74,10 @@ final class date_classifier {
             'timestart', 'startdate', 'open', 'openingtime', 'availablefrom', 'timeavailablefrom',
             'timeviewfrom',
         ];
-        if (in_array($id, $openingids, true)
-                || preg_match('/(open|opening|start|from$|fromdate|availablefrom|viewfrom)/', $id)) {
+        if (
+            in_array($id, $openingids, true)
+            || preg_match('/(open|opening|start|from$|fromdate|availablefrom|viewfrom)/', $id)
+        ) {
             return self::OPENING;
         }
 
