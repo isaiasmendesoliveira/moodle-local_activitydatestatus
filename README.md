@@ -105,8 +105,6 @@ The GitHub distribution includes:
 - Brazilian Portuguese (`pt_br`);
 - Spanish (`es`).
 
-For Moodle Marketplace submission, see [Marketplace submission notes](docs/MARKETPLACE.md).
-
 ## Development
 
 The repository includes Moodle Plugin CI configuration for automated validation. See [CONTRIBUTING.md](CONTRIBUTING.md).
