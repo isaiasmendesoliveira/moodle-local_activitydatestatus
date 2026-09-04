@@ -1,6 +1,11 @@
 # Activity Date Status
-
-**Activity Date Status** (`local_activitydatestatus`) es un complemento local para Moodle que convierte las fechas nativas de las actividades en información más clara de fecha exacta y estado relativo en la página del curso, sin modificar reglas de acceso, plazos ni excepciones gestionadas por Moodle.
+<p align="center">
+  <img
+    src="docs/images/activity-date-status-logo.png"
+    alt="Activity Date Status"
+    width="320">
+</p>
+**Activity Date Status** (`local_activitydatestatus`) es un complemento local para Moodle que convierte las fechas nativas de las actividades en información más clara, de fecha exacta y estado relativo, en la página del curso, sin modificar las reglas de acceso, los plazos ni las excepciones gestionadas por Moodle.
 
 > **Versión pública:** 1.0.0  
 > **Moodle:** 4.5–5.2  
@@ -16,9 +21,9 @@
 - Dos apariencias de estado:
   - **Badge Bootstrap 5** (recomendado);
   - **Texto coloreado con icono**.
-- Umbral de proximidad del plazo configurable por actividad, con valor predeterminado de **48 horas**.
+- Umbral de proximidad del plazo, configurable por actividad, con un valor predeterminado de **48 horas**.
 - Umbral crítico opcional, con valor predeterminado de **12 horas**.
-- Valores predeterminados del sitio que el profesorado puede cambiar en cada actividad.
+- Valores predeterminados del sitio que el profesorado puede modificar en cada actividad.
 - Estados semánticos estándar de Bootstrap 5: `info`, `success`, `warning`, `danger` y `secondary`.
 - Fechas específicas del usuario obtenidas directamente de la API nativa de Moodle.
 - Comportamiento seguro: las fechas nativas de Moodle solo se ocultan después de que el complemento haya generado correctamente su contenido.
@@ -48,11 +53,11 @@ Los valores predeterminados del sitio se encuentran en:
 
 **Administración del sitio → Plugins → Plugins locales → Activity Date Status**
 
-Estos valores son solo predeterminados. El profesorado conserva el control en cada actividad.
+Estos valores son solo predeterminados. El profesorado mantiene el control en cada actividad.
 
 ## Instalación
 
-1. Descargue el ZIP de la versión.
+1. Descargue el archivo ZIP de la versión.
 2. Vaya a **Administración del sitio → Plugins → Instalar plugins**.
 3. Suba el archivo ZIP y complete la validación.
 4. Visite **Administración del sitio → Notificaciones** para finalizar la instalación.
@@ -60,12 +65,12 @@ Estos valores son solo predeterminados. El profesorado conserva el control en ca
 ## Accesibilidad
 
 - El color nunca es la única forma de comunicar el estado.
-- Los iconos son decorativos para las tecnologías de asistencia.
-- El complemento hereda la tipografía y la estructura visual del tema Moodle.
+- Los iconos son decorativos en las tecnologías de asistencia.
+- El complemento hereda la tipografía y la estructura visual del tema de Moodle.
 - Utiliza clases semánticas de Bootstrap 5.
 
 ## Privacidad
 
-El complemento no almacena datos personales. Solo almacena configuraciones de presentación vinculadas al módulo de curso.
+El complemento no almacena datos personales. Solo almacena las configuraciones de presentación vinculadas al módulo de curso.
 
 [Volver al README en inglés](../README.md)
