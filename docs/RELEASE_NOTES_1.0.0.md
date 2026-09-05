@@ -21,4 +21,4 @@ Activity Date Status 1.0.0 is the first public release.
 
 ## Upgrade note for development builds
 
-The public release number is reset to **1.0.0**. The internal Moodle build number is `2026090404`, which is higher than the final development build (`2026090403`), so a development installation can be upgraded directly without a database downgrade.
+The public release number is reset to **1.0.0**. The internal Moodle build number is `2026090409`, which is higher than the final development build (`2026090403`), so a development installation can be upgraded directly without a database downgrade.

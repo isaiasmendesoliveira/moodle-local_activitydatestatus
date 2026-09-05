@@ -1,6 +1,7 @@
 # Changelog
 
 ## 1.0.0 - 2026-09-04
+- Adds a canonical Moodle Grunt AMD build workflow and release-time AMD rebuild to keep `course.min.js` and its source map synchronized.
 
 Initial public release of **Activity Date Status**.
 

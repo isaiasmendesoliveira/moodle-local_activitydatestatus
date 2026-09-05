@@ -20,7 +20,9 @@ Contributions to Activity Date Status are welcome.
 
 Before opening a pull request, run the relevant Moodle Plugin CI checks. GitHub Actions performs automated PHP linting, code checking, validation, Grunt checks, and PHPUnit tests.
 
-When modifying `amd/src/course.js`, rebuild `amd/build/course.min.js` using Moodle's Grunt workflow before committing.
+When modifying `amd/src/course.js`, rebuild the AMD artifacts with Moodle's Grunt workflow before committing. The repository must contain both `amd/build/course.min.js` and `amd/build/course.min.js.map`.
+
+The preferred option is the **Rebuild Moodle AMD** GitHub Actions workflow. It builds with Moodle 5.2 (the highest supported branch) and commits the canonical generated files automatically. For local development, run `npx grunt amd` from the plugin's `amd` directory inside a Moodle 5.2 development tree.
 
 ## Pull requests
 

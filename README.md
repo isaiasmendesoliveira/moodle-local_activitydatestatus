@@ -113,6 +113,11 @@ For Moodle Marketplace submission, see [Marketplace submission notes](docs/MARKE
 
 ## Development
 
+### AMD build artifacts
+
+`amd/src/course.js` is the editable source. Moodle installations use the generated `amd/build/course.min.js`, and the source map must also be committed. Use the **Rebuild Moodle AMD** GitHub Actions workflow after changing the AMD source, or run `npx grunt amd` from the plugin `amd` directory in a Moodle 5.2 development tree.
+
+
 The repository includes Moodle Plugin CI configuration for automated validation. See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## License
