@@ -107,7 +107,8 @@ jobs:
         run: moodle-plugin-ci savepoints
 
       - name: Grunt
-        if: ${{ !cancelled() }}
+        # AMD build output is canonicalised with the highest supported Moodle branch.
+        if: ${{ !cancelled() && matrix.moodle-branch == 'MOODLE_502_STABLE' }}
         run: moodle-plugin-ci grunt --max-lint-warnings 0
 
       - name: PHPUnit
