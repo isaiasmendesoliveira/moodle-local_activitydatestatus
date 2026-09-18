@@ -18,10 +18,11 @@ namespace local_activitydatestatus;
 
 use local_activitydatestatus\local\settings_manager;
 
+defined('MOODLE_INTERNAL') || die();
+
 global $CFG;
 require_once($CFG->dirroot . '/backup/util/includes/backup_includes.php');
 require_once($CFG->dirroot . '/backup/util/includes/restore_includes.php');
-
 /**
  * Tests backup and restore of course-module presentation settings.
  *
