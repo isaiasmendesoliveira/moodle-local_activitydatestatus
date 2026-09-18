@@ -1,8 +1,8 @@
-# Activity Date Status
-
 <p align="center">
   <img src="docs/images/activity-date-status-logo.png" alt="Activity Date Status logo" width="260">
 </p>
+
+# Activity Date Status
 
 **Activity Date Status** (`local_activitydatestatus`) is a local plugin for Moodle LMS that turns native activity dates into clearer exact-date and relative-status information on the course page, while leaving scheduling, access rules, and user-specific overrides under Moodle's control.
 
@@ -36,7 +36,8 @@ Moodle already provides activity dates. Activity Date Status does not replace Mo
   - `danger` — critical proximity or closed state;
   - `secondary` — neutral/unclassified date semantics.
 - User-specific dates are obtained from Moodle core.
-- Fail-safe behavior: Moodle's native date block is hidden only after plugin content has been rendered successfully.
+- Fail-safe behaviour: Moodle's native date block is hidden only after plugin content has been rendered successfully.
+- Course backup, restore, import, and activity duplication preserve the per-activity presentation settings.
 - No external services or runtime dependencies.
 
 ## How it works
@@ -47,7 +48,7 @@ The plugin uses Moodle's native API:
 \core\activity_dates::get_dates_for_module($cm, $userid);
 ```
 
-Moodle remains the single source of truth. The plugin stores only presentation preferences for each course module and does **not** duplicate opening dates, closing dates, due dates, or access rules.
+Moodle remains the single source of truth. The plugin stores only presentation preferences for each course module and does **not** duplicate opening dates, closing dates, due dates, or access rules. Those presentation preferences are included in Moodle backup and restored against the new course-module ID.
 
 ## Teacher controls
 
@@ -86,15 +87,15 @@ Then visit **Site administration → Notifications**.
 
 ## Compatibility
 
-The public 1.0.0 release supports Moodle **4.5 through 5.2**. GitHub Actions validates supported branches with Moodle Plugin CI.
+The public 1.0.0 release declares support for Moodle **4.5 through 5.2**. GitHub Actions is configured to validate supported branches with Moodle Plugin CI.
 
 The plugin works with activities and resources that expose dates through Moodle's `core\\activity_dates` API. If a module does not expose activity dates, the plugin displays nothing for that module.
 
 ## Accessibility
 
-- Status is always communicated with text, not color alone.
+- Status is always communicated with text, not colour alone.
 - Icons are decorative and hidden from assistive technologies.
-- Bootstrap semantic colors are used consistently.
+- Bootstrap semantic colours are used consistently.
 - Moodle/theme typography is inherited rather than replaced.
 
 ## Privacy
@@ -115,7 +116,7 @@ For Moodle Marketplace submission, see [Marketplace submission notes](docs/MARKE
 
 ### AMD build artifacts
 
-`amd/src/course.js` is the editable source. Moodle installations use the generated `amd/build/course.min.js`, and you must also commit the source map. Use the **Rebuild Moodle AMD** GitHub Actions workflow after changing the AMD source, or run `npx grunt amd` from the plugin `amd` directory in a Moodle 5.2 development tree.
+`amd/src/course.js` is the editable source. Moodle installations use the generated `amd/build/course.min.js`, and the source map must also be committed. Use the **Rebuild Moodle AMD** GitHub Actions workflow after changing the AMD source, or run `npx grunt amd` from the plugin `amd` directory in a Moodle 5.2 development tree.
 
 
 The repository includes Moodle Plugin CI configuration for automated validation. See [CONTRIBUTING.md](CONTRIBUTING.md).

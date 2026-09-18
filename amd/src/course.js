@@ -13,6 +13,15 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle. If not, see <https://www.gnu.org/licenses/>.
 
+/**
+ * Course page renderer for Activity Date Status.
+ *
+ * @module     local_activitydatestatus/course
+ * @package    local_activitydatestatus
+ * @copyright  2026 Isaias Mendes de Oliveira
+ * @license    https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+
 const BLOCK_ATTRIBUTE = 'data-local-activitydatestatus';
 const SVG_NS = 'http://www.w3.org/2000/svg';
 const REFRESH_INTERVAL = 60000;

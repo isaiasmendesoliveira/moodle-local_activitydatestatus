@@ -1,6 +1,13 @@
 # Changelog
 
-## 1.0.0 - 2026-09-04
+## 1.0.0 - 2026-09-17
+- Adds Moodle backup and restore integration for all five per-activity presentation settings, remapping them to the restored course-module ID.
+- Adds Moodle-standard JavaScript module metadata to `amd/src/course.js` (`@module`, `@package`, copyright, and GPL licence).
+- Requires the production AMD build and source map to be regenerated with Moodle Grunt after source changes.
+- Keeps the public release at 1.0.0 while advancing the internal build number for Marketplace review fixes.
+
+### Earlier 1.0.0 release-candidate refinements
+
 - Adds a canonical Moodle Grunt AMD build workflow and release-time AMD rebuild to keep `course.min.js` and its source map synchronized.
 
 Initial public release of **Activity Date Status**.

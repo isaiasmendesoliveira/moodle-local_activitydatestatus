@@ -33,6 +33,7 @@ Key features:
 - site defaults that teachers can override;
 - user-specific dates and module-supported overrides supplied by Moodle core;
 - fail-safe rendering that preserves Moodle's native date display if plugin output cannot be generated;
+- Moodle backup/restore support that preserves all per-activity presentation settings and remaps them to the restored course module;
 - no external services or additional runtime dependencies;
 - no storage of personal data.
 
@@ -58,6 +59,7 @@ No command-line, Composer, API key, or external service is required.
 5. Set warning threshold to 48 hours and critical threshold to 12 hours.
 6. Open the course page and verify that the activity displays exact dates and a relative badge.
 7. Change the display mode to **Status only** and confirm that the native activity-date block is replaced only after plugin output is rendered.
+8. Back up the course including activities, restore it as a new course, and confirm that the enabled state, display mode, status style, warning threshold, and critical threshold are preserved for the restored activity.
 
 ## Privacy
 

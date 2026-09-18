@@ -1,9 +1,5 @@
 # Activity Date Status
 
-<p align="center">
-  <img src="../docs/images/activity-date-status-logo.png" alt="Activity Date Status logo" width="260">
-</p>
-
 **Activity Date Status** (`local_activitydatestatus`) é um plugin local para Moodle que transforma as datas nativas das atividades em informações mais claras de data exata e status relativo na página do curso, sem alterar regras de acesso, prazos ou sobreposições definidas pelo Moodle.
 
 > **Versão pública:** 1.0.0  
@@ -26,6 +22,7 @@
 - Estados semânticos nativos do Bootstrap 5: `info`, `success`, `warning`, `danger` e `secondary`.
 - Datas específicas do usuário obtidas diretamente da API nativa do Moodle.
 - Comportamento seguro: as datas nativas do Moodle só são ocultadas depois que o conteúdo do plugin é renderizado com sucesso.
+- Backup, restauração, importação e duplicação de atividades preservam as configurações de apresentação de cada atividade.
 - Sem serviços externos e sem dependências adicionais.
 
 ## Como funciona
@@ -36,7 +33,7 @@ O plugin utiliza:
 \core\activity_dates::get_dates_for_module($cm, $userid);
 ```
 
-O Moodle continua sendo a única fonte das datas. O plugin armazena apenas preferências de apresentação por atividade e não duplica datas de abertura, fechamento, entrega ou regras de acesso.
+O Moodle continua sendo a única fonte das datas. O plugin armazena apenas preferências de apresentação por atividade e não duplica datas de abertura, fechamento, entrega ou regras de acesso. Essas preferências são incluídas no backup do Moodle e restauradas usando o novo ID do módulo do curso.
 
 ## Configuração pelo professor
 
