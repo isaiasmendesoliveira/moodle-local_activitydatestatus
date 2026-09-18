@@ -1,0 +1,84 @@
+name: Build release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-24.04
+    services:
+      postgres:
+        image: postgres:17
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_HOST_AUTH_METHOD: trust
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+        with:
+          path: plugin
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.4'
+          extensions: pgsql, mysqli, zip, gd, soap, intl
+          ini-values: max_input_vars=5000, opcache.enable_cli=1
+          coverage: none
+
+      - name: Initialise Moodle Plugin CI
+        run: |
+          composer create-project -n --no-dev --prefer-dist moodlehq/moodle-plugin-ci ci ^4.5
+          echo "$(cd ci/bin; pwd)" >> "$GITHUB_PATH"
+          echo "$(cd ci/vendor/bin; pwd)" >> "$GITHUB_PATH"
+          sudo locale-gen en_AU.UTF-8
+          echo "NVM_DIR=$HOME/.nvm" >> "$GITHUB_ENV"
+
+      - name: Install Moodle 5.2 development environment
+        run: moodle-plugin-ci install --plugin ./plugin --db-host=127.0.0.1
+        env:
+          DB: pgsql
+          MOODLE_BRANCH: MOODLE_502_STABLE
+
+      - name: Rebuild AMD assets with Moodle Grunt
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ -d "$GITHUB_WORKSPACE/moodle/public/local/activitydatestatus/amd" ]; then
+            AMD_DIR="$GITHUB_WORKSPACE/moodle/public/local/activitydatestatus/amd"
+          else
+            AMD_DIR="$GITHUB_WORKSPACE/moodle/local/activitydatestatus/amd"
+          fi
+          cd "$AMD_DIR"
+          npx grunt amd
+          cp "$AMD_DIR/build/course.min.js" "$GITHUB_WORKSPACE/plugin/amd/build/course.min.js"
+          cp "$AMD_DIR/build/course.min.js.map" "$GITHUB_WORKSPACE/plugin/amd/build/course.min.js.map"
+
+      - name: Install packaging tools
+        run: sudo apt-get update && sudo apt-get install -y rsync zip
+
+      - name: Build release packages
+        working-directory: plugin
+        run: ./tools/build-release.sh "${GITHUB_REF_NAME#v}"
+
+      - name: Create GitHub release
+        working-directory: plugin
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" dist/*.zip \
+            --title "Activity Date Status ${GITHUB_REF_NAME#v}" \
+            --generate-notes
