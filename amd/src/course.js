@@ -16,8 +16,9 @@
 /**
  * Course page renderer for Activity Date Status.
  *
+ * Part of the local_activitydatestatus plugin.
+ *
  * @module     local_activitydatestatus/course
- * @package    local_activitydatestatus
  * @copyright  2026 Isaias Mendes de Oliveira
  * @license    https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
